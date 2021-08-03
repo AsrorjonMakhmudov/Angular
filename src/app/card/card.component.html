@@ -1,0 +1,17 @@
+<div class="card">
+  <h1>{{ title }}</h1>
+  <p>{{ text }}</p>
+
+  <h4>{{ getInfo() }}</h4>
+
+  <!-- <div><img src="{{ logoChange ? angularUrl : vueUrl }}" /></div> -->
+  <!-- <div><img [src]="imgUrl" alt="" /></div>
+  <button [disabled]="disabled">Change Logo</button> -->
+
+  <div class="buttons">
+    <button (click)="changeTitle()">Change title</button>
+    <button (click)="title='Change title with inline'">Change title inline</button>
+  </div>
+
+  <input type="text" (input)="inputHandler($event)" [value]="title">
+</div>
