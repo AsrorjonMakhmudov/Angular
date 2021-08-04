@@ -9,4 +9,20 @@
     .buttons{
         margin-bottom: .5rem;
     }
+
+    .text{
+        font-size: 1.5rem;
+    }
+
+    & .red{
+        color: red;
+    }
+
+    & .green{ 
+        color: green;
+    }
+
+    & .blue{
+        color: blue;
+    }
 }

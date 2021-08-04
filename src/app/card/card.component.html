@@ -1,18 +1,28 @@
 <div class="card">
-  <h1>{{ title }}</h1>
-  <p>{{ text }}</p>
+  <h2 [ngStyle]="{ color: card.title.length < 5 ? 'black' : 'blue' }">
+    {{ card.title }}
+  </h2>
+  <p
+    class="text"
+    [ngClass]="{
+      blue: textColor === 'blue',
+      green: textColor === 'green',
+      red: textColor === 'red'
+    }"
+  >
+    {{ card.text }}
+  </p>
 
-  <h4>{{ getInfo() }}</h4>
+  <!-- <h4>{{ getInfo() }}</h4> -->
 
   <!-- <div><img src="{{ logoChange ? angularUrl : vueUrl }}" /></div> -->
   <!-- <div><img [src]="imgUrl" alt="" /></div>
   <button [disabled]="disabled">Change Logo</button> -->
 
   <div class="buttons">
-    <button (click)="changeTitle()">Change title</button>
-    <button (click)="title = 'Change title with inline'">
-      Change title inline
-    </button>
+    <button (click)="textColor = 'blue'">Set blue</button>
+    <button (click)="textColor = 'green'">Set Green</button>
+    <button (click)="textColor = 'red'">Set Red</button>
   </div>
 
   <!-- <div>
@@ -24,8 +34,7 @@
     />
   </div> -->
 
-
   <div>
-    <input type="text" [(ngModel)]="title">
+    <input type="text" [(ngModel)]="card.title" (ngModelChange)="changeHandler()" />
   </div>
 </div>
